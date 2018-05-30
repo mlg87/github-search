@@ -1,0 +1,60 @@
+version: '3.0'
+
+services: 
+  # db:
+  #   container_name: db
+  #   build: ./db
+  #   restart: always
+  #   ports:
+  #     - '3307:3306' # expose a port for sequel pro
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=mysql
+  #     - MYSQL_DATABASE=orderbook
+  #   healthcheck:
+  #     test: exit 0
+  #   networks:
+  #     - backend
+
+  api:
+    container_name: api
+    build: ./api
+    volumes:
+      - ./api:/app
+      - ./api/package.json:/package.json
+    ports:
+      - '3000:3000' # HOST:CONTAINER
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      # - MYSQL_ROOT_PASSWORD=mysql
+      # - MYSQL_DATABASE=orderbook
+      # - MYSQL_URL=mysql://root:mysql@db:3306/orderbook
+    # depends_on:
+    #   - db
+    # links:
+    #   - db
+    networks:
+      - backend
+      - frontend
+  
+  client:
+    container_name: client
+    build: ./client
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '3007:3006'
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - PORT=3006
+      - REACT_APP_API_URL=http://localhost:3000
+    depends_on:
+      - api
+    links:
+      - api
+    networks:
+      - frontend
+
+networks:
+  frontend:
+  backend:
