@@ -8,16 +8,54 @@ const Results = inject('repositoryStore')(
     class Results extends Component {
       renderResults() {
         return this.props.repositoryStore.results.map(
-          (
-            { name, description, stargazers_count, language, owner: { login } },
-            i
-          ) => {
+          ({ name, description, stargazers_count, language, owner: { login } }, i) => {
             return (
-              <li
-                key={`${name}${i}`}
-              >{`${name} | ${description} | ${stargazers_count} | ${language} | ${login}`}</li>
+              <tr key={`${name}-${i}`}>
+                <td className="results__td">{name}</td>
+                <td className="results__td">{description}</td>
+                <td className="results__td">{login}</td>
+                <td className="results__td">{language}</td>
+                <td className="results__td">{stargazers_count}</td>
+              </tr>
             )
           }
+        )
+      }
+
+      renderTableHeader() {
+        return (
+          <div className="results__header">
+            <table className="results__table" cellPadding="0" cellSpacing="0" border="0">
+              <thead>
+                <tr>
+                  <th className="results__th">Name</th>
+                  <th className="results__th">Description</th>
+                  <th className="results__th">Owner</th>
+                  <th className="results__th">Language</th>
+                  <th className="results__th">Stars</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        )
+      }
+
+      renderTableContent() {
+        return (
+          <div className="results__content">
+            <table className="results__table">
+              <tbody>{this.renderResults()}</tbody>
+            </table>
+          </div>
+        )
+      }
+
+      renderTable() {
+        return (
+          <div>
+            {this.renderTableHeader()}
+            {this.renderTableContent()}
+          </div>
         )
       }
 
@@ -25,12 +63,8 @@ const Results = inject('repositoryStore')(
         const { results } = this.props.repositoryStore
 
         return (
-          <div className="results-container">
-            {!results.length ? (
-              <p>No results to display</p>
-            ) : (
-              <ul>{this.renderResults()}</ul>
-            )}
+          <div className="results">
+            {!results.length ? <p>No results to display</p> : this.renderTable()}
           </div>
         )
       }
