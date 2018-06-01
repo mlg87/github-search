@@ -12,6 +12,7 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
+    "dev": "REACT_APP_API_URL=http://localhost:3000 PORT=3001 yarn start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

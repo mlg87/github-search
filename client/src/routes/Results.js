@@ -7,9 +7,18 @@ const Results = inject('repositoryStore')(
   observer(
     class Results extends Component {
       renderResults() {
-        return this.props.repositoryStore.results.map(result => {
-          return <li>{result}</li>
-        })
+        return this.props.repositoryStore.results.map(
+          (
+            { name, description, stargazers_count, language, owner: { login } },
+            i
+          ) => {
+            return (
+              <li
+                key={`${name}${i}`}
+              >{`${name} | ${description} | ${stargazers_count} | ${language} | ${login}`}</li>
+            )
+          }
+        )
       }
 
       render() {
