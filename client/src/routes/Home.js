@@ -6,7 +6,10 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <input placeholder="Start searching for repos..." />
+        <input
+          className="search-input"
+          placeholder="Start searching for repos..."
+        />
       </div>
     )
   }

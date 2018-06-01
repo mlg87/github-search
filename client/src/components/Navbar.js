@@ -6,13 +6,19 @@ import '../styles/Navbar.css'
 class Navbar extends Component {
   renderLinks() {
     const routes = [
-      { path: '/', label: 'Home' },
-      { path: '/search', label: 'Search' },
+      { path: '/', label: 'Search' },
+      { path: '/results', label: 'Results' },
       { path: '/about', label: 'About' }
     ]
     return routes.map(({ path, label }) => {
       return (
-        <NavLink to={path} activeClassName="app-nav-link--selected" className="app-nav-link">
+        <NavLink
+          to={path}
+          activeClassName="app-nav-link--selected"
+          className="app-nav-link"
+          exact
+          key={`${path}`}
+        >
           {label}
         </NavLink>
       )

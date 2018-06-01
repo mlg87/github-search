@@ -1,0 +1,7 @@
+.route-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 80px is height of nav */
+  height: calc(100vh - 80px);
+}

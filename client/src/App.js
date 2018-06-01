@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Link, Route } from 'react-router-dom'
-import logo from './logo.svg'
+import { Provider } from 'mobx-react'
+import stores from './stores'
+
 import './App.css'
 
-import { About, Home, Search } from './routes'
-import { Navbar } from './components'
+import { Navbar, Router } from './components'
 
 class App extends Component {
   _handleClick = async () => {
@@ -19,14 +19,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app-container">
-        <Navbar />
-        <div className="route-container">
-          <Route path="/search" component={Search} />
-          <Route path="/about" component={About} />
-          <Route exact path="/" component={Home} />
+      <Provider {...stores}>
+        <div className="app-container">
+          <Navbar />
+          <Router />
         </div>
-      </div>
+      </Provider>
     )
   }
 }
