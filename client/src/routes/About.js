@@ -1,14 +1,17 @@
-import React from 'react'
+import React from 'react' // eslint-disable-line
 
 import '../styles/About.css'
 
-const About = props => {
+const About = () => {
   return (
-    <div className="about-container">
-      <h3>Objective</h3>
+    <div className="about">
+      <h3 className="about__header">Objective</h3>
       <p>
         Using the{' '}
-        <a href="https://developer.github.com/v3/search/#search-repositories">
+        <a
+          className="about__link"
+          href="https://developer.github.com/v3/search/#search-repositories"
+        >
           GitHub repository search api,
         </a>{' '}
         build an app that displays repository info for a query. The site should

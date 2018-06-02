@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { Component } from 'react' // eslint-disable-line
+import { NavLink } from 'react-router-dom' // eslint-disable-line
 
 import '../styles/Navbar.css'
 
@@ -14,8 +14,8 @@ class Navbar extends Component {
       return (
         <NavLink
           to={path}
-          activeClassName="app-nav-link--selected"
-          className="app-nav-link"
+          activeClassName="nav__link--selected"
+          className="nav__link"
           exact
           key={`${path}`}
         >
@@ -27,7 +27,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="app-nav">
+      <nav className="nav">
         <ul>{this.renderLinks()}</ul>
       </nav>
     )

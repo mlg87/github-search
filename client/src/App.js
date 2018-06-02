@@ -1,32 +1,18 @@
-import React, { Component } from 'react'
-import { Provider } from 'mobx-react'
+import React from 'react' // eslint-disable-line
+import { Provider } from 'mobx-react' // eslint-disable-line
 import stores from './stores'
 
 import './App.css'
 
-import { Navbar, Router } from './components'
+import { Navbar, Router } from './components' // eslint-disable-line
 
-class App extends Component {
-  _handleClick = async () => {
-    try {
-      const res = await fetch('http://localhost:3000/ping')
-      const json = await res.json()
-      console.log('json', json)
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  render() {
-    return (
-      <Provider {...stores}>
-        <div className="app-container">
-          <Navbar />
-          <Router />
-        </div>
-      </Provider>
-    )
-  }
-}
+const App = () => (
+  <Provider {...stores}>
+    <div className="app-container">
+      <Navbar />
+      <Router />
+    </div>
+  </Provider>
+)
 
 export default App

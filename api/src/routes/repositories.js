@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 
   try {
     const { data } = await axios.get(
-      `https://api.github.com/search/repositories?q=${q}`
+      `https://api.github.com/search/repositories?q=${q}&sort=${req.query.sort}`
     )
     res.status(200).json({ content: data, error: null })
   } catch (error) {
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/test', (req, res) => {
-  res.status(200).json({ message: 'this is for the love of god dude' })
+  res.status(200).json({ message: 'heres your test' })
 })
 
 module.exports = router

@@ -5,13 +5,14 @@
   align-items: center;
 }
 
-.results__header {
-  background-color: rgba(255, 255, 255, 0.3);
+.results__message {
+  color: rgb(194, 194, 194);
 }
 
 .results__table {
   width: 100%;
   table-layout: fixed;
+  border-collapse: collapse;
 }
 
 .results__th {
@@ -21,6 +22,17 @@
   font-size: 12px;
   color: #000;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.results__thead-border {
+  height: 1px;
+  width: 100vw;
+  background: linear-gradient(to right, #f09a38, #d888e2);
+}
+
+.results__sort-order {
+  margin-left: 10px;
 }
 
 .results__td {
@@ -30,7 +42,7 @@
   font-weight: 300;
   font-size: 12px;
   color: #000;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+  border-bottom: solid 1px rgb(194, 194, 194);
 }
 
 .results__content {
@@ -38,5 +50,4 @@
   height: calc(100vh - 160px);
   overflow-x: auto;
   margin-top: 0px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
