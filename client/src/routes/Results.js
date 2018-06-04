@@ -5,6 +5,7 @@ import SortedUp from 'react-icons/lib/ti/arrow-sorted-up'
 
 import '../styles/Results.css'
 
+// TODO refactor from table to css grid to get rid of warnging about th border div
 const Results = inject('repositoryStore')(
   observer(
     class Results extends Component {

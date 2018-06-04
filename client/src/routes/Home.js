@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
-import { withRouter } from 'react-router-dom'
 import Star from 'react-icons/lib/ti/star'
 import StarOutline from 'react-icons/lib/ti/star-outline'
 
 import '../styles/Home.css'
+import { LoadingIndicator } from '../components'
 
 const Home = inject('repositoryStore')(
   observer(
@@ -41,7 +41,6 @@ const Home = inject('repositoryStore')(
       }
 
       _handleSortToggle = e => {
-        console.log('e.target.checked', e.target.checked)
         this.props.repositoryStore.toggleSort(e.target.checked)
       }
 
@@ -55,54 +54,57 @@ const Home = inject('repositoryStore')(
 
       render() {
         const { isLabelHovered } = this.state
-        const { query, sortByStars } = this.props.repositoryStore
+        const { isFetching, query, sortByStars } = this.props.repositoryStore
 
         return (
           <div className="search">
             <form className="search__form" onSubmit={this._handleSubmit}>
-              <input
-                className="search__input"
-                placeholder="Start searching for repos..."
-                value={query}
-                onChange={this._handleTextInputChange}
-                ref={c => (this.searchInput = c)}
-              />
-              <div className="search__descriptor-container">
-                <div>ENTER to search</div>
-                <div>
-                  <input
-                    id="sortBy"
-                    className="search__checkbox-input"
-                    type="checkbox"
-                    checked={sortByStars}
-                    name="sortBy"
-                    onChange={this._handleSortToggle}
-                  />
-                  <label
-                    htmlFor="sortBy"
-                    className="search__checkbox-label"
-                    onMouseEnter={this._handleMouseEnter}
-                    onMouseLeave={this._handleMouseLeave}
-                  >
-                    {isLabelHovered &&
-                      (sortByStars ? (
-                        <span className="search__checkbox-label-tooltip">
-                          Click to sort results by relevance
-                        </span>
+              <fieldset disabled={isFetching}>
+                <input
+                  className="search__input"
+                  placeholder="Start searching for repos..."
+                  value={query}
+                  onChange={this._handleTextInputChange}
+                  ref={c => (this.searchInput = c)}
+                />
+                <div className="search__descriptor-container">
+                  <div>ENTER to search</div>
+                  <div>
+                    <input
+                      id="sortBy"
+                      className="search__checkbox-input"
+                      type="checkbox"
+                      checked={sortByStars}
+                      name="sortBy"
+                      onChange={this._handleSortToggle}
+                    />
+                    <label
+                      htmlFor="sortBy"
+                      className="search__checkbox-label"
+                      onMouseEnter={this._handleMouseEnter}
+                      onMouseLeave={this._handleMouseLeave}
+                    >
+                      {isLabelHovered &&
+                        (sortByStars ? (
+                          <span className="search__checkbox-label-tooltip">
+                            Click to sort results by relevance
+                          </span>
+                        ) : (
+                          <span className="search__checkbox-label-tooltip">
+                            Click to sort results by stars
+                          </span>
+                        ))}
+                      {sortByStars ? (
+                        <Star size={24} />
                       ) : (
-                        <span className="search__checkbox-label-tooltip">
-                          Click to sort results by stars
-                        </span>
-                      ))}
-                    {sortByStars ? (
-                      <Star size={24} />
-                    ) : (
-                      <StarOutline size={24} />
-                    )}
-                  </label>
+                        <StarOutline size={24} />
+                      )}
+                    </label>
+                  </div>
                 </div>
-              </div>
+              </fieldset>
             </form>
+            {isFetching && <LoadingIndicator />}
           </div>
         )
       }

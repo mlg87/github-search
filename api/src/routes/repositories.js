@@ -1,8 +1,9 @@
 const router = require('express').Router()
 const axios = require('axios')
+const { cache } = require('../utils')
 const { version } = require('../../package.json')
 
-router.get('/', async (req, res) => {
+router.get('/', cache(30), async (req, res) => {
   const q = req.query.q.split(' ').reduce((accum, cv, i) => {
     return i === 0 ? cv : `${accum}+${cv}`
   }, '')
@@ -19,7 +20,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/test', (req, res) => {
-  res.status(200).json({ message: 'heres your test' })
+  res.status(200).json({ content: 'hola', error: null })
 })
 
 module.exports = router
