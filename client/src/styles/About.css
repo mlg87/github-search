@@ -10,3 +10,11 @@
   text-decoration: none;
   font-weight: 700;
 }
+
+.about__link:link {
+  color: #f09a38;
+}
+
+.about__link:visited {
+  color: #d888e2;
+}
