@@ -1,20 +1,6 @@
 version: '3.0'
 
 services: 
-  # db:
-  #   container_name: db
-  #   build: ./db
-  #   restart: always
-  #   ports:
-  #     - '3307:3306' # expose a port for sequel pro
-  #   environment:
-  #     - MYSQL_ROOT_PASSWORD=mysql
-  #     - MYSQL_DATABASE=orderbook
-  #   healthcheck:
-  #     test: exit 0
-  #   networks:
-  #     - backend
-
   api:
     container_name: api
     build: ./api
@@ -25,13 +11,6 @@ services:
       - '3000:3000' # HOST:CONTAINER
     environment:
       - NODE_ENV=${NODE_ENV}
-      # - MYSQL_ROOT_PASSWORD=mysql
-      # - MYSQL_DATABASE=orderbook
-      # - MYSQL_URL=mysql://root:mysql@db:3306/orderbook
-    # depends_on:
-    #   - db
-    # links:
-    #   - db
     networks:
       - backend
       - frontend
