@@ -4,4 +4,4 @@ Using the GitHub repository search api ( https://developer.github.com/v3/search/
 
 # Running locally
 
-After cloning the repo, from the root run `docker-compose build && docker-compose up`. go to `localhost:3007` in your browser for the client. api is running on `localhost:3000`
+After cloning the repo, from the root run `docker-compose up`. go to `localhost:3007` in your browser for the client. api is running on `localhost:3000`
