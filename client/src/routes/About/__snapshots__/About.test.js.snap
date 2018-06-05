@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <About />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3
+          className="about__header"
+>
+          Objective
+</h3>,
+        <p>
+          Using the
+           
+          <a
+                    className="about__link"
+                    href="https://developer.github.com/v3/search/#search-repositories"
+          >
+                    GitHub repository search api,
+          </a>
+           
+          build an app that displays repository info for a query. The site should be a react app that allows for text searching and the option to sort by either relevance (score), or the number of stars. This site should query an API that you write in node. The node API should implement response caching to prevent more requests than necessary being made to GitHub. The search results should contain the repository name, description, number of stars, language, and the owners name. You can include more info if you wish. Host the source code for this in a public GitHub repo and send a link to it no later than a week from today. Feel free to continue any improvements/tweaks you want to make after that but it should be functional by then.
+</p>,
+      ],
+      "className": "about",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Objective",
+          "className": "about__header",
+        },
+        "ref": null,
+        "rendered": "Objective",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Using the",
+            " ",
+            <a
+              className="about__link"
+              href="https://developer.github.com/v3/search/#search-repositories"
+>
+              GitHub repository search api,
+</a>,
+            " ",
+            "build an app that displays repository info for a query. The site should be a react app that allows for text searching and the option to sort by either relevance (score), or the number of stars. This site should query an API that you write in node. The node API should implement response caching to prevent more requests than necessary being made to GitHub. The search results should contain the repository name, description, number of stars, language, and the owners name. You can include more info if you wish. Host the source code for this in a public GitHub repo and send a link to it no later than a week from today. Feel free to continue any improvements/tweaks you want to make after that but it should be functional by then.",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Using the",
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "GitHub repository search api,",
+              "className": "about__link",
+              "href": "https://developer.github.com/v3/search/#search-repositories",
+            },
+            "ref": null,
+            "rendered": "GitHub repository search api,",
+            "type": "a",
+          },
+          " ",
+          "build an app that displays repository info for a query. The site should be a react app that allows for text searching and the option to sort by either relevance (score), or the number of stars. This site should query an API that you write in node. The node API should implement response caching to prevent more requests than necessary being made to GitHub. The search results should contain the repository name, description, number of stars, language, and the owners name. You can include more info if you wish. Host the source code for this in a public GitHub repo and send a link to it no later than a week from today. Feel free to continue any improvements/tweaks you want to make after that but it should be functional by then.",
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3
+            className="about__header"
+>
+            Objective
+</h3>,
+          <p>
+            Using the
+             
+            <a
+                        className="about__link"
+                        href="https://developer.github.com/v3/search/#search-repositories"
+            >
+                        GitHub repository search api,
+            </a>
+             
+            build an app that displays repository info for a query. The site should be a react app that allows for text searching and the option to sort by either relevance (score), or the number of stars. This site should query an API that you write in node. The node API should implement response caching to prevent more requests than necessary being made to GitHub. The search results should contain the repository name, description, number of stars, language, and the owners name. You can include more info if you wish. Host the source code for this in a public GitHub repo and send a link to it no later than a week from today. Feel free to continue any improvements/tweaks you want to make after that but it should be functional by then.
+</p>,
+        ],
+        "className": "about",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Objective",
+            "className": "about__header",
+          },
+          "ref": null,
+          "rendered": "Objective",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Using the",
+              " ",
+              <a
+                className="about__link"
+                href="https://developer.github.com/v3/search/#search-repositories"
+>
+                GitHub repository search api,
+</a>,
+              " ",
+              "build an app that displays repository info for a query. The site should be a react app that allows for text searching and the option to sort by either relevance (score), or the number of stars. This site should query an API that you write in node. The node API should implement response caching to prevent more requests than necessary being made to GitHub. The search results should contain the repository name, description, number of stars, language, and the owners name. You can include more info if you wish. Host the source code for this in a public GitHub repo and send a link to it no later than a week from today. Feel free to continue any improvements/tweaks you want to make after that but it should be functional by then.",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Using the",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "GitHub repository search api,",
+                "className": "about__link",
+                "href": "https://developer.github.com/v3/search/#search-repositories",
+              },
+              "ref": null,
+              "rendered": "GitHub repository search api,",
+              "type": "a",
+            },
+            " ",
+            "build an app that displays repository info for a query. The site should be a react app that allows for text searching and the option to sort by either relevance (score), or the number of stars. This site should query an API that you write in node. The node API should implement response caching to prevent more requests than necessary being made to GitHub. The search results should contain the repository name, description, number of stars, language, and the owners name. You can include more info if you wish. Host the source code for this in a public GitHub repo and send a link to it no later than a week from today. Feel free to continue any improvements/tweaks you want to make after that but it should be functional by then.",
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

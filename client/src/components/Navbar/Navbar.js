@@ -1,7 +1,7 @@
 import React, { Component } from 'react' // eslint-disable-line
 import { NavLink } from 'react-router-dom' // eslint-disable-line
 
-import '../styles/Navbar.css'
+import './Navbar.css'
 
 class Navbar extends Component {
   renderLinks() {

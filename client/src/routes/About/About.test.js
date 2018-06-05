@@ -1,7 +1,7 @@
 import React from 'react'
-import App from './App'
+import About from './About'
 
-describe('Navbar', () => {
+describe('About', () => {
   let component
 
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe('Navbar', () => {
   })
 
   test('renders correctly', () => {
-    const wrapper = shallow(<App />)
+    const wrapper = shallow(<About />)
     expect(wrapper).toMatchSnapshot()
   })
 })

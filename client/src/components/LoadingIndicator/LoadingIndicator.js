@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/LoadingIndicator.css'
+import './LoadingIndicator.css'
 
 const LoadingIndicator = () => (
   <div className="loading">

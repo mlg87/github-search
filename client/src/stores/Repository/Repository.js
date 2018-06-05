@@ -1,6 +1,6 @@
 import { observable, action, decorate } from 'mobx'
 import orderBy from 'lodash/orderBy'
-import API from '../utils/api'
+import API from '../../utils/api'
 
 class RepositoryStore extends API {
   //
@@ -82,3 +82,5 @@ decorate(RepositoryStore, {
 })
 
 export default new RepositoryStore()
+// for tests
+export { RepositoryStore }
