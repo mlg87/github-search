@@ -1,4 +1,4 @@
-import repositoryStore from './Repository'
+import repositoryStore from './Repository/Repository'
 
 export default {
   repositoryStore

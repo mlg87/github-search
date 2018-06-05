@@ -1,8 +1,8 @@
 import React, { Component } from 'react' // eslint-disable-line
 import { Route } from 'react-router-dom' // eslint-disable-line
 
-import '../styles/Router.css'
-import { About, Home, Results } from '../routes'
+import './Router.css'
+import { About, Home, Results } from '../../routes'
 
 export default class Router extends Component {
   render() {
