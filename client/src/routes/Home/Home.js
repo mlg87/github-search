@@ -46,8 +46,13 @@ class Home extends Component {
     e.preventDefault()
     if (!this.props.repositoryStore.query.length) return null
 
-    await this.props.repositoryStore.fetchSearch()
-    this.props.history.push('/results')
+    try {
+      await this.props.repositoryStore.fetchSearch()
+      this.props.history.push('/results')
+    } catch (error) {
+      // TODO add error handling
+      console.error(error)
+    }
   }
 
   render() {

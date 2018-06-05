@@ -19,6 +19,7 @@ class RepositoryStore extends API {
   //
   async fetchSearch() {
     this.isFetching = true
+    this.error = null
     try {
       const q = this.query.split(' ').reduce((accum, cv, i) => {
         return i === 0 ? cv : `${accum}+${cv}`
@@ -43,6 +44,7 @@ class RepositoryStore extends API {
       return null
     } catch (error) {
       this.error = error
+      throw error
     } finally {
       this.isFetching = false
     }

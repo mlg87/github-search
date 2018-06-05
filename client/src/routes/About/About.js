@@ -19,11 +19,7 @@ const About = () => (
       an API that you write in node. The node API should implement response
       caching to prevent more requests than necessary being made to GitHub. The
       search results should contain the repository name, description, number of
-      stars, language, and the owners name. You can include more info if you
-      wish. Host the source code for this in a public GitHub repo and send a
-      link to it no later than a week from today. Feel free to continue any
-      improvements/tweaks you want to make after that but it should be
-      functional by then.
+      stars, language, and the owners name.
     </p>
   </div>
 )
